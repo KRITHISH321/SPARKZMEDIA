@@ -1,0 +1,52 @@
+/* Professional viewport-entry animations with varied effects */
+:root {
+    --reveal-duration: 0.7s;
+    --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .reveal {
+    opacity: 0;
+  }
+  
+  .reveal-visible {
+    animation-duration: var(--reveal-duration);
+    animation-timing-function: var(--reveal-ease);
+    animation-fill-mode: forwards;
+    animation-delay: var(--delay, 0s);
+  }
+  
+  /* Keyframe Definitions */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes fadeRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  /* Assign animations */
+  h1.reveal-visible { animation-name: fadeUp; --delay: 0.1s; }
+  h2.reveal-visible { animation-name: fadeLeft; --delay: 0.15s; }
+  h4.reveal-visible { animation-name: fadeRight; --delay: 0.2s; }
+  p.reveal-visible  { animation-name: fadeUp; --delay: 0.25s; }
+  a.reveal-visible  { animation-name: fadeUp; --delay: 0.3s; }
+  .contact__contaniner.reveal-visible { animation-name: fadeLeft; --delay: 0.35s; }
+  .service__card.reveal-visible      { animation-name: scaleIn; --delay: 0.4s; }
+  .portfolio__item.reveal-visible    { animation-name: fadeRight; --delay: 0.45s; }
+  form.reveal-visible                { animation-name: fadeUp; --delay: 0.5s; }
+  .footer__grid.reveal-visible       { animation-name: fadeLeft; --delay: 0.55s; }
+  .footer__card.reveal-visible       { animation-name: fadeRight; --delay: 0.6s; }
+  .footer__bottom.reveal-visible     { animation-name: scaleIn; --delay: 0.65s; }
+  
